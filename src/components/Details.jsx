@@ -10,28 +10,48 @@ import { connect } from "react-redux";
 
 
 const mapStateToProps = (state) => state;
-
 const mapDispatchToProps = (dispatch) => ({
-  setStudents: () => dispatch(fetchStudents()),
-  toggleLoading: () => dispatch({
-    type: 'TOGGLE_LOADING'
-})
-});
+    setStudents: () => dispatch(fetchStudents()),
+    toggleLoading: () => dispatch({
+      type: 'TOGGLE_LOADING'
+  })
+  });
+  
+  const fetchStudents = () => {
+      return (dispatch, getState) => {
+      fetch('http://localhost:3007/users')
+      .then(result => result.json())
+      
+      .then(data => {
+          console.log(data)
+          return dispatch({type: "SET_STUDENTS", payload: data.users })
+      })
+   }
+  }
+// const mapDispatchToProps = (dispatch) => ({
+//   setStudents: () => dispatch(fetchStudents()),
+//   toggleLoading: () => dispatch({
+//     type: 'TOGGLE_LOADING'
+// })
+// });
 
-const fetchStudents = () => {
-    return (dispatch, getState) => {
-    fetch('http://localhost:3007/users/' + this.props.match.params.id)
-    .then(result => result.json())
+// const fetchStudents = (id) => {
+//     return (dispatch, getState) => {
+//     fetch('http://localhost:3007/users/' + id)
+//     .then(result => result.json())
     
-    .then(data => {
-        console.log(data)
-        return dispatch({type: "SET_STUDENTS", payload: data.users })
-    })
- }
-}
+//     .then(data => {
+//         console.log(data)
+//         return dispatch({type: "SET_STUDENTS", payload: data.users })
+//     })
+//  }
+// }
 class Details  extends Component {
 
-
+    componentDidMount = () => {
+  
+        this.props.setStudents()
+          }
 
     // url = 'http://localhost:3001/users'
     
@@ -43,7 +63,7 @@ class Details  extends Component {
     //     this.setState({ student : obj})
     // }
    render() {
-    // console.log(this.state.student)
+    console.log(this.props.students)
    
     return(
         

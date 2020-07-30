@@ -28,6 +28,9 @@ const fetchStudents = () => {
 
  class Students extends Component {
 
+    state = {
+        result: []
+    }
     componentDidMount = () => {
   
   this.props.setStudents()
@@ -39,7 +42,7 @@ const fetchStudents = () => {
         //console.log(result)
         this.setState({
           projects : result,
-          show1: true
+          
         })
         console.log(result)
       
