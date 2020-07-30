@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Card, Button } from 'react-bootstrap'
 import { BrowserRouter as Router, withRouter, Link} from "react-router-dom";
 import { connect } from "react-redux";
-
+import Spiner from './Spiner'
 
 
 const mapStateToProps = (state) => state;
@@ -38,11 +38,13 @@ const fetchStudents = (students) => {
     
  
     render(){
+        console.log(this.props.students)
         return (
             <>
            <h1>Students</h1>
-   
-           {this.props.students.data.map((item, i) => {
+           
+         {this.props.projects.loading ? <Spiner /> : (
+           this.props.students.data.map((item, i) => {
                return(
                 <Card className='col-sm-12 col-md-2 col-lg-2 card-portf' style={{width: '10%'}}>
 
@@ -58,7 +60,10 @@ const fetchStudents = (students) => {
                )
            }
            )
-           }
+           
+
+
+)}  
 
            </>
            
