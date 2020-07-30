@@ -11,6 +11,7 @@ import {
 } from 'react-router-dom'
 import Students from './components/Students'
 import Projects from './components/Projects'
+import Details from './components/Details'
 import Home from './components/Home'
 // import Spiner from './components/Spiner'
 
@@ -27,6 +28,8 @@ function App() {
               <Route path='/home' exact component={Home} ></Route> 
               <Route exact path='/students'  exact component={Students} />
               <Route path='/projects' exact component={Projects} /> 
+             <Route path='/details/:id' exact component={Details}/>}
+
             {/* { this.state.loading ? <LoadingSpinner /> :  <Route path='/details/:id' exact component={Details}/>} */}
            
    

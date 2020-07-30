@@ -9,7 +9,32 @@ body {
   background-size: cover;
 
 }
+.nav-link {
+  color: #fff !important;
+}
+.imgs {
+  /* border-radius: 50%; */
+  margin-top: 40px;
+  padding: 10px;
+  /* width: 50px; */
+  border: 3px solid #fff;
+  transition: all 4s ease-in-out;
 
+}
+
+.imgs:hover {
+  transform: scale(3)
+}
+.card-img-top {
+  border-radius: 50% !important;
+}
+.card-portf {
+  background-color: transparent !important;
+  border: none !important;
+  margin-left: auto;
+  text-align: center;
+
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
