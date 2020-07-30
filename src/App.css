@@ -1,10 +1,13 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,500;1,600&display=swap');
+body {
+  font-family: 'Lora', serif !important;
+  color: #fff !important;
+  background-image: url('https://images.unsplash.com/photo-1498721441674-67b1e1e17a5b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
 @media (prefers-reduced-motion: no-preference) {
