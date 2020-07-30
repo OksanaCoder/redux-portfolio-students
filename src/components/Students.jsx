@@ -41,11 +41,11 @@ const fetchStudents = (students) => {
         console.log(this.props.students)
         return (
             <>
-           <h1>Students</h1>
-           
+        
+           <Row>  
          {this.props.projects.loading ? <Spiner /> : (
-          <Row>   
-         {  this.props.students.data.map((item, i) => {
+          
+          this.props.students.data.map((item, i) => {
                return(
                 <Card className='col-sm-12 col-md-2 col-lg-2 card-portf' style={{width: '10%'}}>
 
@@ -61,12 +61,13 @@ const fetchStudents = (students) => {
                )
            }
            )
-        }
-           </Row>
+        
+          
            
 
 
 )}  
+ </Row>
 
            </>
            

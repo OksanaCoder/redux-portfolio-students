@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import Spiner from './Spiner'
 import { BrowserRouter as Router, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 
@@ -12,21 +12,19 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch({
       type: "SET_PROJECTS",
       payload: projects,
+    }),
+
+    toggleLoading: () => dispatch({
+        type: 'TOGGLE_LOADING'
     })
 });
+
  class Projects extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          
-          projects: []
-        
-        };
-      }
-    
+   
+   
     render(){
         return(
-           <h1>Projects</h1>
+               this.props.projects.loading ? <Spiner /> : (<h1>Projects</h1>)
         )
     }
 }
